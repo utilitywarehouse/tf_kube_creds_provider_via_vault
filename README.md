@@ -1,0 +1,10 @@
+# tf_kube_creds_provider_via_vault
+
+These modules allow Kubernetes service accounts to retrieve cloud provider's
+credentials via vault.
+
+The modules create two vault resources:
+- A vault's secret role that can assume the desired cloud provider role
+- A Kubernetes auth role with permission to use the secret role
+
+Usage details are covered in each provider's README.md
