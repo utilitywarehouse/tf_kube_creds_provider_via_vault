@@ -1,3 +1,7 @@
+variable "environment" {
+  type = string
+}
+
 variable "kube_namespace" {
   type = string
 }
