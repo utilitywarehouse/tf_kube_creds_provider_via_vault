@@ -16,6 +16,9 @@ data "vault_policy_document" "app" {
     path         = "${var.gcp_secret_backend}/token/${local.name}"
     capabilities = ["create", "read", "update", "delete", "list"]
   }
+  # We do not use access keys directly but still allow the call, even though
+  # the roleset will not be able to produce an access key, since the roleset
+  # is a different type.
   rule {
     path         = "${var.gcp_secret_backend}/key/${local.name}"
     capabilities = ["create", "read", "update", "delete", "list"]
