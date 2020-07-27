@@ -7,7 +7,13 @@ module "tf_kube_creds_provider_via_vault" {
   kube_namespace = "example-namespace"
   kube_sa_name   = "example"
   gcp_project    = "example-project"
-  gcp_role       = "example-role"
+
+  gcp_bindings = [
+    {
+      resource = "example-resource"
+      roles = ["example-role"]
+    }
+  ]
 }
 ```
 
