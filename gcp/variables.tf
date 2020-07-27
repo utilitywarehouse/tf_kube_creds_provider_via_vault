@@ -16,8 +16,11 @@ variable "kube_sa_name" {
   type = string
 }
 
-variable "gcp_role" {
-  type = string
+variable "gcp_bindings" {
+  type = list(object({
+    resource = string
+    roles    = list(string)
+  }))
 }
 
 variable "gcp_project" {
