@@ -36,5 +36,12 @@ resource "vault_gcp_secret_roleset" "app" {
   secret_type  = "access_token"
   project      = var.gcp_project
   token_scopes = ["https://www.googleapis.com/auth/cloud-platform"]
-  binding      = var.gcp_bindings
+
+  dynamic "binding" {
+    for_each = var.gcp_bindings
+    content {
+      resource = binding.value.resource
+      roles    = binding.value.roles
+    }
+  }
 }
