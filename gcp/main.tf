@@ -13,6 +13,10 @@ resource "vault_kubernetes_auth_backend_role" "app" {
 
 data "vault_policy_document" "app" {
   rule {
+    path         = "${var.gcp_secret_backend}/roleset/${local.name}"
+    capabilities = ["read"]
+  }
+  rule {
     path         = "${var.gcp_secret_backend}/token/${local.name}"
     capabilities = ["create", "read", "update", "delete", "list"]
   }
