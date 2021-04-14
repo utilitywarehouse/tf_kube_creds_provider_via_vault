@@ -1,5 +1,5 @@
 locals {
-  name = "${var.environment}-${var.kube_namespace}-${var.kube_sa_name}"
+  name = "${var.environment}_gcp_${var.kube_namespace}_${var.kube_sa_name}"
 }
 
 resource "vault_kubernetes_auth_backend_role" "app" {
