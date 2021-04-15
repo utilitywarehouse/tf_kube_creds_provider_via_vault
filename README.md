@@ -1,4 +1,4 @@
-# tf_kube_creds_provider_via_vault
+# DEPRECATED - moved to https://github.com/utilitywarehouse/vault-kube-cloud-credentials/tree/master/terraform
 
 These modules allow Kubernetes service accounts to retrieve cloud provider's
 credentials via vault.
